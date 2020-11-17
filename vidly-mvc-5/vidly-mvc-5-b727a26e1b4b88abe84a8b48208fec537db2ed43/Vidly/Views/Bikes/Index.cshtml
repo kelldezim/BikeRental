@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Vidly.Models.Bike>
+
+@{ 
+    ViewBag.Title = "Bikes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bikes avaible in our rental</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Bike Brand</th>
+            <th>Bike Model</th>
+            <th>Bike Price per day</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bike in Model)
+        {
+            <tr>
+                <td>@bike.Brand</td>
+                <td>@bike.Model</td>
+                <td>@bike.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>

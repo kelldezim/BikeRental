@@ -23,23 +23,23 @@ namespace Vidly.Controllers
             };
         }
 
-        // GET: Movies/Random
-        public ActionResult Random()
-        {
-            var movie = new Movie() { Name = "Shrek!" };
-            var customers = new List<Customer>
-            {
-                new Customer { Name = "Customer 1" },
-                new Customer { Name = "Customer 2" }
-            };
+        //// GET: Movies/Random
+        //public ActionResult Random()
+        //{
+        //    var movie = new Movie() { Name = "Shrek!" };
+        //    var customers = new List<Customer>
+        //    {
+        //        new Customer { Name = "Customer 1" },
+        //        new Customer { Name = "Customer 2" }
+        //    };
 
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
+        //    var viewModel = new RandomMovieViewModel
+        //    {
+        //        Movie = movie,
+        //        Customers = customers
+        //    };
 
-            return View(viewModel);
-        }
+        //    return View(viewModel);
+        //}
     }
 }

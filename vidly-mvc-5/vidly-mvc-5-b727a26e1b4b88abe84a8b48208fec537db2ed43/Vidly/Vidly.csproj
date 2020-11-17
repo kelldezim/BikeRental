@@ -185,6 +185,18 @@
     <Compile Include="Migrations\202011171540096_PopulateMembershipTypes.Designer.cs">
       <DependentUpon>202011171540096_PopulateMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011171626576_ApplyAnnotationToTheCustomerName.cs" />
+    <Compile Include="Migrations\202011171626576_ApplyAnnotationToTheCustomerName.Designer.cs">
+      <DependentUpon>202011171626576_ApplyAnnotationToTheCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011171655319_AddedColourPropToBikeModel_AND_DataAnnotation.cs" />
+    <Compile Include="Migrations\202011171655319_AddedColourPropToBikeModel_AND_DataAnnotation.Designer.cs">
+      <DependentUpon>202011171655319_AddedColourPropToBikeModel_AND_DataAnnotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011171715430_AddedBikesTableToIdentityModel.cs" />
+    <Compile Include="Migrations\202011171715430_AddedBikesTableToIdentityModel.Designer.cs">
+      <DependentUpon>202011171715430_AddedBikesTableToIdentityModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bike.cs" />
@@ -283,6 +295,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011171540096_PopulateMembershipTypes.resx">
       <DependentUpon>202011171540096_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011171626576_ApplyAnnotationToTheCustomerName.resx">
+      <DependentUpon>202011171626576_ApplyAnnotationToTheCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011171655319_AddedColourPropToBikeModel_AND_DataAnnotation.resx">
+      <DependentUpon>202011171655319_AddedColourPropToBikeModel_AND_DataAnnotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011171715430_AddedBikesTableToIdentityModel.resx">
+      <DependentUpon>202011171715430_AddedBikesTableToIdentityModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

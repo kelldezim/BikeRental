@@ -10,18 +10,28 @@ namespace Vidly.Controllers
 {
     public class BikesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public BikesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
         // GET: Bikes
         public ViewResult Index()
         {
-            var bikes = GetBikes();
+            var bikes = _context.Bike.ToList(); ;
             return View(bikes);
         }
-        private IEnumerable<Bike> GetBikes()
-        {
-            return new List<Bike> 
-            { new Bike { Brand = "Trek", Model = "Emonda", Price=150},
-              new Bike { Brand = "Giant", Model = "TCR", Price=140}
-            };
-        }
+        //private IEnumerable<Bike> GetBikes()
+        //{
+        //    return new List<Bike> 
+        //    { new Bike { Brand = "Trek", Model = "Emonda", Price=150},
+        //      new Bike { Brand = "Giant", Model = "TCR", Price=140}
+        //    };
+        //}
     }
 }

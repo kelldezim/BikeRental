@@ -5,6 +5,7 @@ using Vidly.ViewModels;
 using System.Data.Entity;
 using System.Linq;
 using System;
+using System.Data.Entity.Validation;
 //using Vidly.Migrations;
 
 namespace Vidly.Controllers
@@ -50,6 +51,15 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel(movie)
+                {
+                    Genres = _context.Genre.ToList()
+                };
+                return View("MovieForm", viewModel);
+            }
+
             if(movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
@@ -63,7 +73,16 @@ namespace Vidly.Controllers
                 movieInDb.NumberInStock = movie.NumberInStock;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
             }
-            _context.SaveChanges();
+            //this is the example how to debug EntityValidation Exception
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                Console.WriteLine(e);
+            }
+           
             return RedirectToAction("Index", "Movies");
         }
         public ActionResult Edit(int id)
@@ -73,9 +92,8 @@ namespace Vidly.Controllers
             {
                 return HttpNotFound();
             }
-            var movieModel = new MovieFormViewModel()
+            var movieModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
                 Genres = _context.Genre.ToList()
             };
 
